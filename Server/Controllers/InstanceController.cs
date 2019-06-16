@@ -7,17 +7,17 @@ namespace Server.Controllers
     [ApiController]
     public class InstanceController : ControllerBase
     {
-        private readonly IInstanceService instanceService;
+        private readonly IInstanceService _instanceService;
         
         public InstanceController(IInstanceService instanceService)
         {
-            this.instanceService = instanceService;
+            _instanceService = instanceService;
         }
         
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return instanceService.GetInstanceId();
+            return _instanceService.GetInstanceId();
         }
     }
 }
